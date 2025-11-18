@@ -1,127 +1,92 @@
-/* Page Background */
+/* Whole page background */
 body {
+  font-family: Arial, sans-serif;
+  background: #dfe9f3; 
   margin: 0;
   padding: 0;
-  background: #eef3f8;
-  font-family: Arial, sans-serif;
 }
 
 /* Header */
-.page-header {
+.site-header {
   text-align: center;
-  background: #2c333d;
-  padding: 25px;
+  padding: 25px 10px;
+  background: #4a90e2;   
   color: white;
 }
 
-.page-header .sub {
-  font-size: 14px;
+.title {
+  margin-bottom: 5px;
 }
 
-.page-header .req {
-  color: #ffeb3b;
-  font-weight: bold;
+.subtitle {
+  color: #eef3ff;
 }
 
-/* Main container */
-.container {
+/* Product grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
   width: 90%;
-  max-width: 600px;
-  margin: 30px auto;
-  background: rgb(172, 186, 192);
-  padding: 25px 30px;
+  margin: 25px auto;
+}
+
+/* Product card */
+.card {
+  background: #ffffff;         
   border-radius: 8px;
-  border: 1px solid #d5dce3;
+  padding: 15px;
+  border: 2px solid #cdd6e2;      
 }
 
-/* Form heading */
-#regForm h3 {
-  margin-top: 0;
-  color: #3a6ea5;
-  text-align: center;
-}
-
-/* Form labels */
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-/* Inputs, select, etc */
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="date"],
-select {
+/* Product image */
+.thumb {
   width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  margin-bottom: 8px;
-  border: 1px solid #3b6ca8;
-  border-radius: 4px;
-  font-size: 15px;
-  background: #c9cdce;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: #b0c4de;
 }
 
-/* Fieldset */
-fieldset {
-  margin-top: 10px;
-  border: 1px solid #bfc8d3;
-  padding: 10px;
-  border-radius: 4px;
+/* Product name */
+.name {
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: #333;
 }
 
-legend {
-  padding: 0 6px;
+/* Description */
+.desc {
+  color: #555;
+  margin-bottom: 12px;
+}
+
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
   font-weight: bold;
-  color: #3a6ea5;
+  color: #2a4d69; 
 }
 
-/* Error message */
-.error {
-  color: red;
-  font-size: 14px;
-  margin-top: -4px;
-  display: block;
-}
 
-/* Buttons */
-button {
-  padding: 10px 16px;
-  margin-right: 6px;
-  margin-top: 10px;
-  background: #3a6ea5;
-  border: none;
+.btn {
+  padding: 6px 12px;
+  background: #2a4d69; 
   color: white;
+  text-decoration: none;
   border-radius: 4px;
-  font-size: 15px;
-  cursor: pointer;
+  font-size: 14px;
 }
 
-button:hover {
-  background: #855cd7;
-}
 
-button[type="reset"] {
-  background: #923f3f;
-}
-
-button[type="reset"]:hover {
-  background: #9a3c3c;
-}
-
-/* Success Toast */
-#toast {
-  display: none;
+.site-footer {
   text-align: center;
-  margin-top: 20px;
-  font-weight: bold;
-  color: green;
-  animation: fadeIn 0.5s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  padding: 15px;
+  background: #4a90e2;
+  color: white;
+  margin-top: 30px;
 }

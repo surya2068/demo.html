@@ -1,77 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Event Registration</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Task 3 — Clean form with JS validation, per-field errors, success toast -->
-  </head>
-  <body>
-    <header class="page-header">
-      <h1>Event Registration</h1>
-      <p class="sub">Please fill all <span class="req">*</span> mandatory fields.</p>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Product Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!--
+    ==============================================
+    Title      : Task 2 — Responsive Product Gallery
+    Objective  : Build a responsive, accessible product grid
+    Author     : <Your Name / Roll No.>
+    Notes      : Uses CSS Grid with auto-fit/minmax and inline SVG images
+    ==============================================
+  -->
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="title">Featured Products</h1>
+    <p class="subtitle"></p>
+  </header>
 
-    <main class="container">
-      <!-- novalidate so JS controls validation -->
-        <form id="regForm">
-          <h3>Event Registration Form</h3>
+  <main>
+    <!-- Responsive Grid -->
+    <section class="gallery container" aria-label="Products">
+      <!-- Card 1 -->
+      <article class="card" tabindex="0">
+        <img class="thumb"
+             width="450" height="450" loading="lazy"
+             alt="Leather Wallet placeholder image"
+             src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS4UPZYvN9FwuRzs9BNBXUAwMe0FYdM7E-_kxq61xtg3Q8YAJjP3CFdQW4Oiu-4Q71eU2GkbP1-gkvYWrA5ZWqthuOKxrOyvzC563Pqf4N6y5aPmGC67qE"
+        <h3 class="name">Leather Wallet</h3>
+        <p class="desc">Hand-stitched wallet with RFID protection.</p>
+        <div class="meta">
+          <span class="price">₹1,299</span>
+          <a href="#" class="btn">View</a>
+        </div>
+      </article>
 
-          <label>Full Name: <input type="text" id="name"></label>
-          <span id="err-name" class="error"></span><br>
+      <!-- Card 2 -->
+      <article class="card" tabindex="0">
+        <img class="thumb"
+             width="450" height="450" loading="lazy"
+             alt="Backpack placeholder image"
+             src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS2Cr9RcMaP4M6j-JNNj3aKPPiyaVltMrOFFCeS27t1_WA39X9U9cBUh1yQ0s_UIAW2pGl1Eyx0qpikpUIQXRmzgWno8OFuib-InKcwgKUviWIMvig_PD5_XPNP"
+        <h3 class="name">Backpack</h3>
+        <p class="desc">Minimal backpack for daily commute.</p>
+        <div class="meta">
+          <span class="price">₹2,499</span>
+          <a href="#" class="btn">View</a>
+        </div>
+      </article>
 
-          <label>Email: <input type="email" id="email"></label>
-          <span id="err-email" class="error"></span><br>
+      <!-- Card 3 -->
+      <article class="card" tabindex="0">
+        <img class="thumb"
+             width="450" height="450" loading="lazy"
+             alt="Sunglasses placeholder image"
+             src="data:image/webp;base64,UklGRkIOAABXRUJQVlA4IDYOAADQSwCdASrkAAIBPj0ejUSiIaGR+pTYIAPEtLdwuaB8S+3Afz5+svav19M/9qf1AfX/3Ti/4Bf4z/J/9DwnoBPzj+qf638qvhbm6ZAH5f8bf6F7Af8y/sn+z+275Lf9j7nfeR9Mf8//J/AX/Lv65/rfzi/f/62PXx+zvsgfsmOyyoTkFsX1cUaK4Mi1lQnILYvq4o0VwZFrKhOQWxfVH1YpIa4MgH5M5Imyf+tpdGyuwfbkr6fugykFCN9g5i23VPtiFD4k77MjEMtBa45nOGPJZH1U/AkKM8lwTVrF126yf3f8ZRKmz81WhJFbrnZNcjC3hbSPSVebjPCMemAlDYQaV4rklGh4lE1X2lAvm3ev+5tCUueYF2e4/MOv9+GgscU6TyyXLVWCfM4D8x/Rj0T4IE/niMV7AIH3DfZ2jTWuHQU61d8YB+5pc4qR+e3pV446RvpDhj6jieAAQE2rzHTG5Gfrq5ftyYjkApnwKIvnjLKwTftkhIM9WrYv3MbTdm0eQCIOeB2l9Ct/q4xEXN8D/nktEgfjOcvGkOyeMdIe8J3WWB55spsA5g49n58wkSSc/6beXxO45iCGnu8OT9Ov1oEOcE4MGkM2gu7bIcxChiBy42TjR2rcSW0dY+tfOw3Tul4Q8piyusmLEFwqpcfKCvh0gf6PxMjjW1NW3bl5lHF2fk3AnUT8VvhcX0b/XG3LwdBsA9g8aAFT9sxQABk4Dw2ZJYOlZqYab3ZlGNFRdnjOI6pDceFW1Fg/Vy0W39RLQvpyC2L6uKNFcGRayoTkFsX1cUaK4Mi1lQnILYvq4o0VwZFrKTAA/v+8hAAAAAAAjxaxC5Bm3AGmeJB3gMuOFW8YoJMeycDSP3RadeKxMqiCi3ZY9IGJ9Qs6nPSsJ0z0ForU27oACF7K32H19qdsY+qk1zLYFV8RFO8wPBzjRdSdeOJnrFOaUNJ13Apf/vXbN8H6JKydqNW7e62hyBjsYtxsC9oopcDYvxGI/FMEDTJsdPpUd5+y7PgEKCYWugRtRe3dLpiTbv+2OtRnI31aFU82u1CcZmXLamIxzzABr0W4mUyiq/9Pa5wzD+F92fcXYQO/vGjtbN5DeapweOeV2juTFC6o4eHtNw5xptf/wAKNHzvB72jobxZd9zZngobdLfH5hDECTV8rWNvsrG5KISi+rYR8UnisASUcrEkFd+o/jz90vV9XPNUURFRXHOWc5+3lFqmn+KitdfgfhmrFvGtdLhs/jeFZEu4HVBIEcXEGv5kRdnsDY7wYFf9VMo1mBzdtMaOfnSNuT+ERsipdJj+tqftorNbrq0f3yw8hfqajtP9HoC5tiUaLTaUMXq0cv5t2CLR17hkZYLC6H+Thgg7EG/UPEdW2IRpiUqf9kBDFKW/gBrWr2XGVlRKg0rJaFd+sx83/tGLWnVGWN2h9BOoI59+TJ6LA0TF8JAK8dIcVXyXsN57VVPQejWsdQsLHAxd++2MR5CCdQr0X4WXTzDLPH+KjLJcwuByukSbfCxE6776689nc9yZYFG3rqN5wP1jUd6cHcOccUlO8AZVxvue7XRJ7omlHWaTPimspMCmNaPgOF51UZy0UYAJfhA5tNHosAKiOjzfVdBxK/IA5HwxdwQQVcngv5BTw6AoYhjcscbEYqMCZIu16Twm6yqVRGoLyBkzqgt67CY7Tw910BMIWSKEPdjjgbe9egHgiQ3wYfRcz9qAKosN33/5ieE7cYX4Xps/h/stFGkDH40uv4rZ+7W++fq8NCaPYjEgJOgvXiFv4p2l7eI8+Wp6+a/wUr/inFNHbadoN2SIUJPAttMd988/UclUknm2xNw378HZSWIf9VneL1dgC/JH+B823ZiJDMwVvcZS/+G1ZbRmwsgrRzj3DRPoA+HGglv66OPpqY3scdaIlSxSYb+g9DSuPs7OcO7j+y5ZkE6pUbDxqT/5/rXGg2qWf9uAXRYWZ6l8Y1GUhrg2eTWbuelMeNK4YlLBrHIurpdkxE6CO9oqZPxCNs/fzXHudy33wwY+0ewZcPElXk8uTpKRKNcLNRtlvTXzixo/vLr2UgxiUsQb5ER6OsU/1wpIT4XaED/QvyT9d02t5j1tpH0OANgHPVdbKDct6RdrnKY0NEKaQjW7ACjwNapd2f/AQbkMdYPvF4MvLfFVYh7WlGNF/IcQW9ng/3k+y90UxPYDF3AF9d4sIcesUzeG4ZV9NBf+6Y5EmVeUfORcseAaN+D1HXxkGCc+CB3nxOQPOz6agQTc0+oDa0qh3TZ/DLmHIj0hqGm5ngtg+RJ0eoCPNOdzUjw9trYsmef/ZZyfgoIgUqRIfR1NxJKpgaq5k2QpXhffDk1IFzNvd+AvaEpF9U/wp2Y55KiaZqj5tsQYa2tz/LjMwfjUdeP7v0g4PoMBqIjtmf5ndtJJGcujQk4m1UFQX/CAQcrPcC9SDp4b/39ftj4B5tJKbcDcNdJJI27+2Mvky3A/wqY1Ki4nFy3nPTbbDArRXX9kHzBNl4v7YAPWZ4iVsn6K+LQoTvoElYE4CshYFbTG18kM0RZ3d5o5dZdZtKW81U7yDdrqLcKneipSMxz3qgXq45bEKZWIowr4Qi+LSgsn/FfJfBmZQLrUPbz4TcijIuOtSah824Xmr363zQIHRSzYgl4Dw4rH+w6kMBomfD5IMG6eTjSQWFzrty4CM8njbL2ELgfoOHb6j1zil4CjmkGYutOp9A9nfjgSXjlP55OQB6yDhRKIqSUYqGFfxUt60Z8hZo9k2Yhw+tGGnNCmHhN/7aOCKXWP4l7aieEdbNz5isf+zXz0VWHW8dl8yp+BqfxM/4cavlbjQkvgicjgiBbL130+Pg4tSNx7TvpmrpV9jXZWs/+C2NaHN0L+48U3S5XdwnIIyCrkGQ5sTXRQo7a7kjI0ELJhVyjIRFAKezNrLOf8+Hk2fgpP4Ms/AaBiOFkDc6RcJVnd3IqpL1b5k2pscIimRPUQPau1Qx9i9RDCjIXeX5Jueur6zhQPgMAJRjeoHv7p4V9wY9px93SP38sD8d4CJlbLe1pEsMPb9SujEOyGoDbARQouPE0cH7hVbnW+JJTqcJ5xVHrrzpKeGFMiHcif5xj7cgXxGnTFKsvq6B/zp0U0NZhqlIsPebkb+7Db/nykl4FJaaesOB7V+eUG/VJWixmC2uE5POT403//y/HOV/M1rpil4M85mwwK+DqtkqQDCDgDPFsF25mWKulemrvYXcrYyxFUjuca5N1VqjxXE+vVwS1BwX+5FzSFH1/LXTh+q0aIaPvB+UtKx14LV7dSqpROk+Ec547YttumnM7+omcVEqkiLFYoNtw+tXs9mzXvz3OcP/UyRLmk0HzUWVu2aYPcbFaUat4UvzRuKqDAOCrnnVV/L1O35EauXU4LVOZY7c6ZGMrC2dIt9Tn2RG24BwWZwvYl5iEcw0vTGDNC+YTngBr8R8SOgTJHxOnGqoia2KpHZcWSQNvc23uWOgSIsWtzGbr6aOPp66uYFvA8b+RTXiEzw+rrx64RLVJvb+UckM5nBZ3/XOAr/M0/dighFycq6yjUf5OXRtnkXR2xj2HC9TYz81BiKqCYpfgDuS6MR39bV4F5zgFqsP4lEVj5FdXf3mxLeui+AruEpo1xp8iXu8KRreT1aFJn1wcbwloRRR2Y0g3O/rAnIDLgwFXzzLxJnTb3L/NSRWu7WcJLPtZ5e8IaD8U3MN892Qj1VYlKr/kfIF0NBl15K36Vi9boRxUrRHuIwN1FPEsECmmUJo+AG/LweUDfIh5M21dVDLA3peX+gE28F7NsIr+Xs3UetoXvtvp2txplfepC03EVmpJ+MjjGFCr8QzK8VLnHkWGVcX/5daATadcYD9RPaMA2/feRWh0ByWsXaQnwDwGsoRfb7jdgZSLN90mqdhnZJnvrqPB+0d0caHn6M29PMVnjU24Tfc8ezI1OWMq5AVN5RJRXZJjwCdZx4rRZTuAG59bDQuaH5paGjrG0NR6R11HxMt3F7IdRJ6DYQ2wold5bSMbBf7NRlggTzPASYxbAjRJEXqMhDCeQgDU0tRKqkpAGx7IWQwG7Z4IoR78yk5/zlTjV1AYyooO16R+yh4ntJqkWnFreGPHBR0E5F1JJ5lmxuVbI6AShiheKvRk5+lEBMSjSVnIznZAX3rDyZXHRfETiE42uMQMq/LTYRfXdu73oY9CudT87khqXgdZTlRJOnyjo7UGrZ0vUg7afzfF5Tgns+opm7XAv5pZuOZCcXtrEbmuQl3ZpGk0Fk89LNJTQf534Smwz7RQoyz9ES9KOAnFYqVcoSAwf7CgvAB029OxfvUx8W/Zne7Z9ouxzfXK6qdXWOclKCMbdzAJHsaNghfISiiKi7td5giyeB399HD3/BjrALoZpPWvHuoBTQltXMaywOG42+WMsFTSwmzrO9LeLlSd7cRmsSOikEWqUiGuw/DzmrNa25W+eTvRFGgzFSHItZE/uMAgbQ5oZ67ndhIeK210PfUzrr75+UXDllJaNHP1Mab5ub80/VK6NNUCUIzXHAA1DnYLp/mp9Vg1IBpses8yPrpNMBNmvQbuGg5AvZvMs6NUjg+m4KaZpH7TK4jylJIyT0mmkwHwfAt+8xH/Op7YiO5dk340AuCWA7Gj66I3VV5OHY5AbU4OWddYIsxkxZumiWKRAxe2sPmDv+/3bFguSqv1yp7VQRc9U7kQ2hzNeDtgUmFBbEHDw4keNDjixpwmRmyvEFTHAwlsGJEHVtbX/4vdhZyaTKrtRaUa1Y6dMMhoxXmNcrPiP3LhfEAUWV8m5yR8VFmeztPOibiWbsnFRFxIDFDrr46tesMfOmTYSwJZmFZEVBSoAAAAAAAAAAAA=="
+        <h3 class="name">Sunglasses</h3>
+        <p class="desc">UV400 protection eyewear.</p>
+        <div class="meta">
+          <span class="price">₹799</span>
+          <a href="#" class="btn">View</a>
+        </div>
+      </article>
 
-          <label>Phone: <input type="text" id="phone"></label>
-          <span id="err-phone" class="error"></span><br>
+      <!-- Card 4 -->
+      <article class="card" tabindex="0">
+        <img class="thumb"
+             width="450" height="450" loading="lazy"
+             alt="Watch placeholder image"
+             src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQCyAHJxpkns_9PIkSRDo17bj6PzoJU84xtKP4iwM7cI2pQT8l4fiZIQ_XB4C7tQGhg6bMJj4_cyRPvuRO8NjwA2pwXoHjmJs4B7dXBDDA"
+        <h3 class="name">Classic Watch</h3>
+        <p class="desc">Stainless steel with leather strap.</p>
+        <div class="meta">
+          <span class="price">₹4,999</span>
+          <a href="#" class="btn">View</a>
+        </div>
+      </article>
 
-          <label>Event Type:
-            <select id="type">
-              <option value="">-- Select Type --</option>
-              <option value="Workshop">Workshop</option>
-              <option value="Seminar">Seminar</option>
-              <option value="Conference">Conference</option>
-            </select>
-          </label>
-          <span id="err-type" class="error"></span><br>
+      <!-- Card 5 -->
+      <article class="card" tabindex="0">
+        <img class="thumb"
+             width="450" height="450" loading="lazy"
+             alt="Shoes placeholder image"
+             src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQKuKbSDapE61y2BZapUeLXCFaBnV-KCsUinddnTpo9RMNXhyarf3aTG-50Y5eJR4_Fud9Cp0-yB7_QrntXLojhHFij3azT5sPCC9hQh_sZSzMsqFGiooC"
+        <h3 class="name">Running Shoes</h3>
+        <p class="desc">Breathable mesh design.</p>
+        <div class="meta">
+          <span class="price">₹3,199</span>
+          <a href="#" class="btn">View</a>
+        </div>
+      </article>
 
-          <fieldset>
-            <legend>Mode of Attendance:</legend>
-            <label>
-              <input type="radio" name="mode" value="Online"> Online
-            </label>
+      <!-- Card 6 -->
+      <article class="card" tabindex="0">
+        <img class="thumb"
+             width="450" height="450" loading="lazy"
+             alt="Belt placeholder image"
+             src="data:image/webp;base64,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"
+        <h3 class="name">Leather Belt</h3>
+        <p class="desc">Full-grain leather with metal buckle.</p>
+        <div class="meta">
+          <span class="price">₹899</span>
+          <a href="#" class="btn">View</a>
+        </div>
+      </article>
+    </section>
+  </main>
 
-            <label>
-              <input type="radio" name="mode" value="Offline"> Offline
-            </label>
-            <span id="err-mode" class="error"></span>
-          </fieldset>
-
-          <br>
-
-          <label>Date: <input type="date" id="date"></label>
-          <span id="err-date" class="error"></span><br>
-
-          <label>Seats: <input type="number" id="seats" min="1" max="5"></label>
-          <span id="err-seats" class="error"></span><br>
-
-          <label><input type="checkbox" id="terms"> I agree to terms</label>
-          <span id="err-terms" class="error"></span><br><br>
-
-          <button type="submit">Submit</button>
-          <button type="reset">Reset</button>
-        </form>
-
-      <p id="toast" style="display:none; color:green; font-weight:bold;">✅ Form Submitted Successfully!</p>
-
-      <style>
-        body { font-family: Arial; line-height: 1.8; }
-        .error { color: red; font-size: 14px; margin-left: 6px; }
-        fieldset { width: 250px; }
-      </style>
-    </main>
-    <script src="app.js" defer></script>
-  </body>
+  <footer class="site-footer">© <span id="y"></span> Your Brand</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
 </html>
