@@ -1,0 +1,127 @@
+/* Page Background */
+body {
+  margin: 0;
+  padding: 0;
+  background: #eef3f8;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  background: #2c333d;
+  padding: 25px;
+  color: white;
+}
+
+.page-header .sub {
+  font-size: 14px;
+}
+
+.page-header .req {
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+/* Main container */
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+  background: rgb(172, 186, 192);
+  padding: 25px 30px;
+  border-radius: 8px;
+  border: 1px solid #d5dce3;
+}
+
+/* Form heading */
+#regForm h3 {
+  margin-top: 0;
+  color: #3a6ea5;
+  text-align: center;
+}
+
+/* Form labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Inputs, select, etc */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  border: 1px solid #3b6ca8;
+  border-radius: 4px;
+  font-size: 15px;
+  background: #c9cdce;
+}
+
+/* Fieldset */
+fieldset {
+  margin-top: 10px;
+  border: 1px solid #bfc8d3;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+legend {
+  padding: 0 6px;
+  font-weight: bold;
+  color: #3a6ea5;
+}
+
+/* Error message */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -4px;
+  display: block;
+}
+
+/* Buttons */
+button {
+  padding: 10px 16px;
+  margin-right: 6px;
+  margin-top: 10px;
+  background: #3a6ea5;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #855cd7;
+}
+
+button[type="reset"] {
+  background: #923f3f;
+}
+
+button[type="reset"]:hover {
+  background: #9a3c3c;
+}
+
+/* Success Toast */
+#toast {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
