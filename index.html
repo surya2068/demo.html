@@ -1,63 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Human-Style Book List</title>
-<link rel="stylesheet" href="styles.css">
-<!-- Bootstrap CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Gallery (Dynamic)</title>
+    <link rel="stylesheet" href="styles.css"
 </head>
-
 <body>
+    <header>
+        <h1>Book Gallery (Dynamic)</h1>
+        <button id="loadSampleData">Load Sample Data</button>
+    </header>
 
-<div class="container">
-
-    <div class="header-box">
-        <h2 class="mb-0">📚 Human-Style Bookstore List</h2>
-        <p class="text-muted mt-2">Dynamic books generated from JavaScript ✨</p>
-    </div>
-
-    <div class="row mt-4" id="bookList">
-        <!-- Books will appear here dynamically -->
-    </div>
-
-</div>
-
-<script>
-// Sample book data
-const books = [
-    { title: "The Silent Observer", author: "Hannah Cole", price: "$12.99" },
-    { title: "Winds of Tomorrow", author: "Mark Hayden", price: "$15.49" },
-    { title: "Moonlit Streets", author: "Ava Thompson", price: "$9.99" },
-    { title: "The Lost Chapter", author: "Liam Rhodes", price: "$11.50" },
-    { title: "Golden Horizon", author: "Maya Allen", price: "$14.20" }
-];
-
-// Function to display books
-function displayBooks() {
-    const container = document.getElementById("bookList");
-    container.innerHTML = ""; // clear area
-
-    // Loop through books
-    books.forEach(book => {
-        const card = `
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="book-card">
-                    <div class="title">${book.title}</div>
-                    <div class="author">by ${book.author}</div>
-                    <div class="price mt-2">${book.price}</div>
-                </div>
+    <main>
+        <section class="controls">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Title or Author">
+                <button id="searchButton">Search</button>
             </div>
-        `;
-        container.innerHTML += card;
-    });
-}
+            <div class="sort-container">
+                <label for="sortSelect">Sort:</label>
+                <select id="sortSelect" name="sort">
+                    <option value="default">Default</option>
+                   
+                </select>
+            </div>
+            <button id="addBookButton">+ Add Book</button>
+        </section>
 
-// Run the function
-displayBooks();
-</script>
+        <section class="book-list">
+        
+        </section>
+    </main>
 
+    <footer>
+        <p>&copy; 2025 Dynamic Book List - Task 7</p>
+    </footer>
+ <script src="script.js"></script>
 </body>
 </html>

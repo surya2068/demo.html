@@ -1,53 +1,114 @@
+
 body {
-        background: #f7f3ea;
-        font-family: "Segoe UI", sans-serif;
-    }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background for the overall page */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer stays at the bottom */
+}
 
-    .header-box {
-        background: #fffdf8;
-        padding: 25px;
-        margin-top: 25px;
-        border-radius: 16px;
-        border: 2px dashed #c9c0b2;
-        text-align: center;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        animation: float 4s ease-in-out infinite;
-    }
+/* Confine the app content to a maximum width for better readability on large screens */
+header, main, footer {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
 
-    @keyframes float {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
-        100% { transform: translateY(0); }
-    }
+/* --- Header Styling --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px; /* Add some space at the very top */
+}
 
-    .book-card {
-        background: #fffaf1;
-        border-radius: 15px;
-        border: 1.5px solid #e2d8c7;
-        padding: 18px;
-        transition: 0.3s;
-        box-shadow: 0 5px 14px rgba(0,0,0,0.08);
-    }
+header h1 {
+    font-size: 1.2em;
+    margin: 0;
+}
 
-    .book-card:hover {
-        transform: translateY(-4px);
-        background: #fff8ea;
-    }
+/* --- Main Content & Controls Styling --- */
+main {
+    flex-grow: 1; /* Allows main content area to expand and push footer down */
+    background-color: #fff;
+    padding-top: 20px;
+}
 
-    .title {
-        font-size: 20px;
-        color: #564e46;
-        font-weight: bold;
-    }
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space between control groups */
+    margin-bottom: 20px;
+}
 
-    .author {
-        font-size: 15px;
-        color: #7d7469;
-    }
+/* Input fields and buttons should take up full width within their containers */
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    margin: 0;
+    font-size: 1em;
+}
 
-    .price {
-        font-size: 16px;
-        color: #b06e2b;
-        font-weight: 600;
-    }
+/* Adjust the specific search button to sit next to the input using a container div */
+.search-container {
+    display: flex;
+    gap: 5px;
+}
 
+/* Ensure the search input takes up most of the space */
+.search-container input {
+    flex-grow: 1;
+}
+
+/* --- Button Specific Styling --- */
+button {
+    background-color: #007bff; /* Blue color for buttons */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#addBookButton {
+    background-color: #28a745; /* Green color for 'Add Book' button */
+}
+
+#addBookButton:hover {
+    background-color: #218838;
+}
+
+/* --- Book List Styling (for items added via JavaScript) --- */
+.book-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.book-item h4 {
+    margin: 0 0 5px 0;
+}
+
+.book-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* --- Footer Styling --- */
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #777;
+    padding: 15px 10px;
+    margin-bottom: 10px; /* Space at the very bottom */
+}
