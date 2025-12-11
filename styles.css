@@ -1,114 +1,87 @@
-
+/* Basic page styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Light gray background for the overall page */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensures footer stays at the bottom */
+  font-family: Arial, sans-serif;
+  background: #5d5050;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
 }
 
-/* Confine the app content to a maximum width for better readability on large screens */
-header, main, footer {
-    max-width: 500px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
+/* App container */
+.app {
+  background: white;
+  width: 350px;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-/* --- Header Styling --- */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    margin-top: 10px; /* Add some space at the very top */
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-header h1 {
-    font-size: 1.2em;
-    margin: 0;
+/* Form layout */
+#task-form {
+  display: flex;
+  gap: 10px;
 }
 
-/* --- Main Content & Controls Styling --- */
-main {
-    flex-grow: 1; /* Allows main content area to expand and push footer down */
-    background-color: #fff;
-    padding-top: 20px;
+#task-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
-.controls {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Adds space between control groups */
-    margin-bottom: 20px;
+#task-form button {
+  padding: 8px 15px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Input fields and buttons should take up full width within their containers */
-input, select, button {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box; /* Ensures padding doesn't increase total width */
-    margin: 0;
-    font-size: 1em;
+#task-form button:hover {
+  background: #3e35c0;
 }
 
-/* Adjust the specific search button to sit next to the input using a container div */
-.search-container {
-    display: flex;
-    gap: 5px;
+/* Task list */
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
 }
 
-/* Ensure the search input takes up most of the space */
-.search-container input {
-    flex-grow: 1;
+/* Task item */
+#task-list li {
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* --- Button Specific Styling --- */
-button {
-    background-color: #007bff; /* Blue color for buttons */
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
+/* Delete button */
+.delete-btn {
+  background: #e53e3e;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-#addBookButton {
-    background-color: #28a745; /* Green color for 'Add Book' button */
-}
-
-#addBookButton:hover {
-    background-color: #218838;
-}
-
-/* --- Book List Styling (for items added via JavaScript) --- */
-.book-item {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.book-item h4 {
-    margin: 0 0 5px 0;
-}
-
-.book-item p {
-    margin: 0;
-    color: #666;
-    font-size: 0.9em;
-}
-
-/* --- Footer Styling --- */
-footer {
-    text-align: center;
-    font-size: 0.8em;
-    color: #777;
-    padding: 15px 10px;
-    margin-bottom: 10px; /* Space at the very bottom */
+.delete-btn:hover {
+  background: #c53030;
 }
